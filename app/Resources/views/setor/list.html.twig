@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div>
+<a href="/setor/create" class="btn btn-primary">Inserir setor</a>
+</div>
+{% for p in posts %}
+
+<div class='posts'>
+  <h1>{{p.getId}}</h1>
+  <h2><a href="/setor/edit/{{p.getId()}}">{{p.getNomeSetor}}</a></h2>
+  <small><a href="/setor/remove/{{p.getId()}}">Deletar</a></small>
+  <h4>{{p.getDescricao}}</h4>
+</div>
+{% endfor %}
+{% endblock %}

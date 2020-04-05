@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col-md-12">
+
+</div>
+<a href="/crud/create" class="btn btn-primary">Inserir pessoa</a>
+<ul>
+{% for p in crud %}
+
+<div class='crud'>
+  <h2><a href="/crud/edit/{{p.getId()}}">{{p.getNome() }}</a></h2>
+  <small><a href="/crud/remove/{{p.getId()}}">Deletar</a></small>
+  <h6>{{p.getNascimento}}</h6>
+  <h6>{{p.getCPF}}</h6>
+  <h6>{{p.getEndereco}}</h6>
+  <h6>{{p.getEMAIL}}</h6>
+  <hr>
+
+</div>
+{% endfor %}
+</ul>
+
+{% endblock %}
